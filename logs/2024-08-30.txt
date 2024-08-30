@@ -1,4 +1,0 @@
-14:11:35: Error occured: [Errno 2] No such file or directory: '/media/share/movies'
-14:11:35: Manually updated movies
-14:34:16: Error occured: [Errno 2] No such file or directory: '/media/share/movies'
-14:34:16.760: Manually updated movies via /update web call
