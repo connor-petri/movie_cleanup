@@ -10,7 +10,7 @@ def move_files_except_largest(dir: str) -> None:
     largest_file = max(filenames, key=lambda f: os.path.getsize(os.path.join(dir, f)))
     filenames.remove(largest_file)  # remove the largest file from the list
                 
-            # Move all other files to 'extras'
+    # Move all other files to 'extras'
     for filename in filenames:
         if not os.path.isdir(os.path.join(dir, "extras")):
             os.mkdir(os.path.join(dir, "extras"))
@@ -26,7 +26,8 @@ def scan_movies(dir: str) -> None:
 
 
 if __name__ == "__main__":
-    root_dir = input("Movie directory: ")
+    with open("movie-path.txt", "r") as f:
+        root_dir = f.read().strip()
     
     schedule.every().day.at("00:00").do(scan_movies, root_dir)
 
